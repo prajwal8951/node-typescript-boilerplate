@@ -1,0 +1,52 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeDisabled",
+    ":dependencyDashboard",
+    ":maintainLockFilesWeekly"
+  ],
+  "baseBranches": [
+    "master"
+  ],
+  "labels": [
+    "renovate"
+  ],
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "dependencyDashboardTitle": "Renovate Dependency Dashboard",
+  "commitMessagePrefix": "[RENOVATE] ",
+  "prConcurrentLimit": 5,
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "^@trainline",
+        "^@fleet-components",
+        "^ta-",
+        "^trainline-"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "packageNames": [
+        "aws-sdk"
+      ],
+      "schedule": [
+        "after 6am on monday"
+      ]
+    },
+    {
+      "depTypeList": [
+        "devDependencies"
+      ],
+      "prPriority": -1
+    }
+  ],
+  "prFooter": "**Testing notes:** General regression testing needed",
+  "postUpdateOptions": [
+    "yarnDedupeHighest"
+  ],
+  "branchTopic": "{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}-{{{newMinor}}}{{/if}}-x{{#if isLockfileUpdate}}-lockfile{{/if}}"
+}
