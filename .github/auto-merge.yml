@@ -4,7 +4,8 @@ reportStatus: true
 # The minimum number of reviews from each association that approve the pull request before
 # doing an automatic merge. For more information about associations see:
 # https://developer.github.com/v4/enum/commentauthorassociation/
-minApprovals:
+rules:
+- minApprovals:
   MEMBER: 1
   COLLABORATOR: 0
   OWNER: 0
@@ -12,6 +13,8 @@ minApprovals:
   FIRST_TIMER: 0
   FIRST_TIME_CONTRIBUTOR: 0
   NONE: 0
+- requiredReviewers:
+  - renovate-approve
 
 # Whether an out-of-date pull request is automatically updated.
 # It does so by merging its base on top of the head of the pull request.
