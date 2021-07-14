@@ -58,4 +58,4 @@ blockingLabels:
 # Whenever required labels are configured, pull requests will only be automatically merged whenever
 # all of these labels are attached to a pull request.
 requiredLabels:
-  - Ready To Merge
+  - ✅ Ready To Merge
