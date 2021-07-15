@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: volta-cli/action@v1
+    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2
+    - uses: volta-cli/action@76620aa011ba56028bb0bae35caa5f9b6118c8c7 # renovate: tag=v1
     - run: npm ci --no-audit
     - run: npm run lint --if-present
     - run: npm test
