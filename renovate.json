@@ -2,7 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    ":automergeMinor",
     ":dependencyDashboard",
     ":maintainLockFilesWeekly"
   ],
@@ -12,6 +11,7 @@
   "dependencyDashboardTitle": "Renovate Dependency Dashboard",
   "commitMessagePrefix": "[RENOVATE] ",
   "prConcurrentLimit": 5,
+  "automerge": true,
   "major": {
     "dependencyDashboardApproval": true
   },
