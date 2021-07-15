@@ -36,8 +36,8 @@ requiredLabels:
 rules:
 - minApprovals:
     MEMBER: 1
-- requiredLabels:
-  - merge
+- requiredReviewers:
+  - renovate-approve
   
 # Optionally specify the merge commit message format. The following template
 # tags are supported:
