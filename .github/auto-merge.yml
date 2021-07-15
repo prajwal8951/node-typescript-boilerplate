@@ -13,8 +13,8 @@ rules:
   FIRST_TIMER: 0
   FIRST_TIME_CONTRIBUTOR: 0
   NONE: 0
-- requiredReviewers:
-  - renovate-approve
+- requiredLabels:
+  - merge
 
 # Whether an out-of-date pull request is automatically updated.
 # It does so by merging its base on top of the head of the pull request.
