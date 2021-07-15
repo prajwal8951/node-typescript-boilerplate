@@ -1,34 +1,35 @@
 {
-  "extends": ["github>renovatebot/.github"],
-  "assignees": ["rarkins", "viceice"],
-  "semanticCommitScope": "deps",
-  "automergeType": "pr",
-  "prCreation": "immediate",
-  "dockerfile": {
-    "semanticCommitType": "build"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+    ":dependencyDashboard",
+    ":maintainLockFilesWeekly"
+  ],
+  "baseBranches": ["master"],
+  "labels": ["renovate"],
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "dependencyDashboardTitle": "Renovate Dependency Dashboard",
+  "commitMessagePrefix": "[RENOVATE] ",
+  "prConcurrentLimit": 5,
+  "major": {
+    "dependencyDashboardApproval": true
   },
   "packageRules": [
     {
-      "matchPackageNames": [
-        "mcr.microsoft.com/vscode/devcontainers/typescript-node"
-      ],
-      "extends": ["schedule:monthly"]
+      "packagePatterns": ["^@trainline", "^@fleet-components", "^ta-", "^trainline-"],
+      "dependencyDashboardApproval": true
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "semanticCommitType": "build"
+      "packageNames": ["aws-sdk"],
+      "schedule": ["after 6am on monday"]
     },
     {
-      "matchPackageNames": ["semantic-release"],
-      "semanticCommitType": "build"
-    },
-    {
-      "matchPackageNames": ["@types/jest"],
-      "groupName": "jest monorepo"
-    },
-    {
-      "matchPaths": ["**/__fixtures__/**"],
-      "enabled": false
+      "depTypeList": ["devDependencies"],
+      "prPriority": -1
     }
-  ]
+  ],
+  "prFooter": "**Testing notes:** General regression testing needed",
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "branchTopic":"{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}-{{{newMinor}}}{{/if}}-x{{#if isLockfileUpdate}}-lockfile{{/if}}"
 }
