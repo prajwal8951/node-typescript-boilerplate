@@ -5,7 +5,8 @@ reportStatus: true
 # doing an automatic merge. For more information about associations see:
 # https://developer.github.com/v4/enum/commentauthorassociation/
 
-minApprovals:
+rules:
+- minApprovals:
   MEMBER: 1
   COLLABORATOR: 0
   OWNER: 0
@@ -13,8 +14,7 @@ minApprovals:
   FIRST_TIMER: 0
   FIRST_TIME_CONTRIBUTOR: 0
   NONE: 0
-
-requiredLabels:
+- requiredLabels:
   - merge
 
 # Whether an out-of-date pull request is automatically updated.
