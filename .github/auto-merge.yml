@@ -1,22 +1,6 @@
 # Configuration for probot-auto-merge - https://github.com/bobvanderlinden/probot-auto-merge
 reportStatus: true
 
-# The minimum number of reviews from each association that approve the pull request before
-# doing an automatic merge. For more information about associations see:
-# https://developer.github.com/v4/enum/commentauthorassociation/
-
-rules:
-- minApprovals:
-  MEMBER: 1
-  COLLABORATOR: 0
-  OWNER: 0
-  CONTRIBUTOR: 0
-  FIRST_TIMER: 0
-  FIRST_TIME_CONTRIBUTOR: 0
-  NONE: 0
-- requiredLabels:
-  - merge
-
 # Whether an out-of-date pull request is automatically updated.
 # It does so by merging its base on top of the head of the pull request.
 # This is the equivalent of clicking the 'Update branch' button.
@@ -58,3 +42,15 @@ mergeCommitMessage: |
 blockingLabels:
   - DO NOT MERGE
   - WIP
+  
+rules:
+- minApprovals:
+  MEMBER: 1
+  COLLABORATOR: 0
+  OWNER: 0
+  CONTRIBUTOR: 0
+  FIRST_TIMER: 0
+  FIRST_TIME_CONTRIBUTOR: 0
+  NONE: 0
+- requiredLabels:
+  - merge
