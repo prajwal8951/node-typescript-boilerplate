@@ -12,23 +12,6 @@
   "commitMessagePrefix": "[RENOVATE] ",
   "prConcurrentLimit": 5,
   "automerge": true,
-  "major": {
-    "dependencyDashboardApproval": true
-  },
-  "packageRules": [
-    {
-      "packagePatterns": ["^@trainline", "^@fleet-components", "^ta-", "^trainline-"],
-      "dependencyDashboardApproval": true
-    },
-    {
-      "packageNames": ["aws-sdk"],
-      "schedule": ["after 6am on monday"]
-    },
-    {
-      "depTypeList": ["devDependencies"],
-      "prPriority": -1
-    }
-  ],
   "prFooter": "**Testing notes:** General regression testing needed",
   "postUpdateOptions": ["yarnDedupeHighest"],
   "branchTopic":"{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}-{{{newMinor}}}{{/if}}-x{{#if isLockfileUpdate}}-lockfile{{/if}}"
