@@ -36,6 +36,12 @@ requiredLabels:
 rules:
 - minApprovals:
     MEMBER: 1
+    COLLABORATOR: 0
+    OWNER: 0
+    CONTRIBUTOR: 0
+    FIRST_TIMER: 0
+    FIRST_TIME_CONTRIBUTOR: 0
+    NONE: 0
 - requiredReviewers:
   - renovate-approve
   
