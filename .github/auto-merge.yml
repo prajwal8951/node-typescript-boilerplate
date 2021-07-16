@@ -33,15 +33,6 @@ requiredLabels:
 # The minimum number of reviews from each association that approve the pull request before
 # doing an automatic merge. For more information about associations see:
 # https://developer.github.com/v4/enum/commentauthorassociation/
-rules:
-- minApprovals:
-    MEMBER: 1
-    COLLABORATOR: 0
-    OWNER: 0
-    CONTRIBUTOR: 0
-    FIRST_TIMER: 0
-    FIRST_TIME_CONTRIBUTOR: 0
-    NONE: 0
 - requiredReviewers:
   - renovate-approve
   
