@@ -33,7 +33,7 @@ requiredLabels:
 # The minimum number of reviews from each association that approve the pull request before
 # doing an automatic merge. For more information about associations see:
 # https://developer.github.com/v4/enum/commentauthorassociation/
-- requiredReviewers:
+requiredReviewers:
   - renovate-approve
   
 # Optionally specify the merge commit message format. The following template
