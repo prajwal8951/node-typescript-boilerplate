@@ -11,7 +11,12 @@
   "dependencyDashboardTitle": "Renovate Dependency Dashboard",
   "commitMessagePrefix": "[RENOVATE] ",
   "prConcurrentLimit": 5,
-  "automerge": true,
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "minor": {
+    "dependencyDashboardApproval": true
+  },
   "prFooter": "**Testing notes:** General regression testing needed",
   "postUpdateOptions": ["yarnDedupeHighest"],
   "branchTopic":"{{{depNameSanitized}}}-{{{newMajor}}}{{#if isPatch}}-{{{newMinor}}}{{/if}}-x{{#if isLockfileUpdate}}-lockfile{{/if}}"
