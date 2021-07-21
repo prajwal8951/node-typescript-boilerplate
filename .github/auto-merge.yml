@@ -24,11 +24,6 @@ mergeMethod: squash
 blockingLabels:
   - DO NOT MERGE
   - WIP
-
-# Whenever required labels are configured, pull requests will only be automatically merged whenever
-# all of these labels are attached to a pull request.
-requiredLabels:
-  - ✅ Ready To Merge
   
 # The minimum number of reviews from each association that approve the pull request before
 # doing an automatic merge. For more information about associations see:
@@ -44,6 +39,11 @@ rules:
     NONE: 0
 - requiredReviewers:
   - renovate-approve
+
+# Whenever required labels are configured, pull requests will only be automatically merged whenever
+# all of these labels are attached to a pull request.
+requiredLabels:
+  - ✅ Ready To Merge
   
 # Optionally specify the merge commit message format. The following template
 # tags are supported:
